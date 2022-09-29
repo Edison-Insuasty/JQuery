@@ -1,0 +1,513 @@
+<!--
+Luis Eduardo Lopez      - 218036084
+Edison Vicente Insuasty - 218036080
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Juego JQuery</title>
+
+	<link rel='stylesheet' type='text/css' media='screen' href='css/jquery-ui.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/jquery-ui.min.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/jquery-ui.structure.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/jquery-ui.structure.min.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/jquery-ui.theme.css'>
+	<link rel='stylesheet' type='text/css' media='screen' href='css/jquery-ui.theme.min.css'>
+	<link rel="stylesheet"  >
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/funciones.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<style>
+		#accordion-5{ font-size: 14px; } 
+		#tabs-1     { font-size: 14px; }  
+		.ui-widget-header {  
+			background:lightpink;  
+			border: 1px solid #b9cd6d;  
+			color: lightyellow;  
+			font-weight: bold;  
+		} 
+		#dropzone,#dropzone1,#dropzone2,#dropzone3,#dropzone4,#dropzone5 {
+			top: 150px;
+			width: 250px;
+			height: 250px;
+			border: solid 1px;
+		}
+		#dropzone  { background:       yellow; } 
+		#dropzone1 { background:         cyan; } 
+		#dropzone2 { background: rgb(0,200,0); }
+		#dropzone3 { background:         gray; }
+		#dropzone4 { background:      #8C4AF7; }
+		#dropzone5 { background:         pink; }
+		#sortable-8{ 
+			list-style-type: none; 
+			margin: 0;   
+			padding: 0; 
+			width: 25%; 
+			float:left;
+		}  
+		#sortable-8 li{ 
+			margin: 0 3px 3px 3px; 
+			padding: 0.4em;   
+			padding-left: 1.5em; 
+			font-size: 17px; 
+			height: 35px;
+			width: 280px; 
+		}  
+		.default {  
+			background: orange;  
+			border: 2px solid black;  
+			color: #333333;  
+		}
+		.default1 {  
+			background: red;  
+			border: 2px solid black;  
+			color: #333333;  
+		}
+		#box-1, #box-5, #box-9 {  
+			height: 60px;  
+			width: 130px;  
+			background: #2576F2;  
+		}  
+		#box-2, #box-6, #box-10 {  
+			height: 60px;  
+			width: 130px;  
+			background: #F11212;  
+		}
+		#box-3, #box-7, #box-11 {  
+			height: 60px;  
+			width: 130px;  
+			background: #FD6104;  
+		}  
+		#box-4, #box-8, #box-12 {  
+			height: 60px;  
+			width: 130px;  
+			background: #419920 ;  
+		}
+		#button1,#button2,#button3,#button4,#button5,#button6,#button7,#button8,#button9,#button0 { 
+			width: 130px;
+			height: 30px; 
+			padding: .5em 1em; 
+			text-decoration: none; 
+			color: white; 
+		}
+		#button1 { background: #FE04CB; }
+		#button2 { background: #FB1302; }
+		#button3 { background: #6404FE; }
+		#button4 { background:   black; }
+		#button5 { background: #B51406; }
+		#button6 { background: #88690B; }
+		#button7 { background: #0230FB; }
+		#button8 { background: #1EA234; }
+		#button9 { background: #F95703; }
+		#button0 { background: #8A8A8B; }
+		#effect1,#effect2,#effect3,#effect4,#effect5,#effect6,#effect7,#effect8,#effect9,#effect0 { 
+			width: 130px; 
+			height: 30px; 
+			padding: 0.4em; 
+			position: relative; 
+			background: #fff; 
+		}
+	</style>
+
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+	<script src='main.js'></script>
+
+</head>
+<body>
+	<br>
+	<div class="row h-100 justify-content-center align-items-center">
+		<div class="card col-10" style="background-color: #F0F2EE;">
+			<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-transparent p-3 rounded-2 text-black" tabindex="0">
+				<div class="alert alert-success" role="alert" align="center">
+					BIENVENIDO AL JUEGO DE PREGUNTAS
+				</div>
+				<div id="accordion-5">  
+					<h3>1. Inserte la figura en el color indicado</h3>  
+					<div>  
+						<div id="tabs-1">  
+							<ul>  
+								<li><a href="#tabs-2">Cuadrado</a></li>  
+								<li><a href="#tabs-3">Circulo</a></li>  
+								<li><a href="#tabs-4">Tiangulo</a></li>  
+							</ul>  
+							<div id="tabs-2">
+								<table align="center">
+									<tr align="center">
+										<td colspan="2">
+											<div class="alert alert-primary" role="alert" align="center">
+												Arrastre el CUADRADO al color Celeste
+											</div>
+										</td>
+									</tr>
+									<tr align="center" valign="top">
+										<td colspan="2">
+											<img id="cuadrado" src="img/cuadrado.png">
+											<br>
+										</td>
+									</tr>
+									<tr align="center">
+										<td>
+											<div id="dropzone">¡arrastre figura!</div>
+										</td>
+										<td>
+											<div id="dropzone1">¡arrastre figura!</div>
+										</td>
+									</tr>
+								</table>  
+							</div>  
+							<div id="tabs-3">  
+								<table align="center">
+									<tr align="center">
+										<td colspan="2">
+											<div class="alert alert-primary" role="alert" align="center">
+												Arrastre el CIRCULO al color verde
+											</div>
+										</td>
+									</tr>
+									<tr align="center" valign="top">
+										<td colspan="2">
+											<img id="circulo" src="img/circulo.png">
+										</td>
+									</tr>
+									<tr align="center">
+										<td>
+											<div id="dropzone2">¡arrastre figura!</div>
+										</td>
+										<td>
+											<div id="dropzone3">¡arrastre figura!</div>
+										</td>
+									</tr>
+								</table>
+							</div>  
+							<div id="tabs-4">  
+								<table align="center">
+									<tr align="center">
+										<td colspan="2">
+											<div class="alert alert-primary" role="alert" align="center">
+												Arrastre el TRIANGULO al color purpura
+											</div>
+										</td>
+									</tr>
+									<tr align="center" valign="top">
+										<td colspan="2">
+											<img id="triangulo" src="img/triangulo.jpg">
+										</td>
+									</tr>
+									<tr align="center">
+										<td>
+											<div id="dropzone4">¡arrastre figura!</div>
+										</td>
+										<td>
+											<div id="dropzone5">¡arrastre figura!</div>
+										</td>
+									</tr>
+								</table>
+							</div>  
+						</div>   
+					</div>  
+					<h3>2. Ordene los pais de mayor población a menor</h3>  
+					<div>  
+						<table align="center">
+							<tr align="center">
+								<td colspan="2">
+									<div class="alert alert-primary" role="alert" align="center">
+										<i>Mueva hasta que los numeros esten en orden</i>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td colspan="2">
+									<h6><span id="sortable-9"><br>6,5,10,3,8,7,2,9,4,1</span></h6> 
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<b><i>PAIS</i></b>
+								</td>
+								<td>
+									<b><i>POBLACIÓN</i></b>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<ul id="sortable-8">
+										<li id="6" class="default1">Chile</li> 
+										<li id="5" class="default">Venezuela</li>
+										<li id="10" class="default1">Uruguay</li>
+										<li id="3" class="default">Argentina</li>
+										<li id="8" class="default1">Bolivia</li> 
+										<li id="7" class="default">Ecuador</li>
+										<li id="2" class="default1">Colombia</li>
+										<li id="9" class="default">Paraguay</li> 
+										<li id="4" class="default1">Peru</li>
+										<li id="1" class="default">Brasil</li>       
+									</ul> 
+								</td>
+								<td>
+									<ul id="sortable-8">
+										<li class="default1">213'993.441 Personas</li> 
+										<li class="default">51'600.000 Personas</li>
+										<li class="default1">47'327.407 Personas</li>
+										<li class="default">33'396.700 Personas</li>
+										<li class="default1">28'440.000 Personas</li> 
+										<li class="default">19'120.000 Personas</li>
+										<li class="default1">17'888.474 Personas</li>
+										<li class="default">11'800.000 Personas</li> 
+										<li class="default1">7'453.695 Personas</li>
+										<li class="default">3'485.152 Personas</li>       
+									</ul>
+								</td>
+							</tr>
+						</table>
+					</div>  
+					<h3>3. Responda las siguientes preguntas</h3>  
+					<div align="center"> 
+						<div class="card mb-3" style="max-width: 650px;">
+							<div class="row g-0">
+								<div class="col-md-4" >
+									<br><br>
+									<h6><b>1.</b>¿Cuales son las tres partes del cuerpo humano?</h6>
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<table align="center">
+											<tr align="center">
+												<td valign="middle">
+													<div id="box-1"><b>A.</b>Cabeza,Piernas y Brazos</div>
+												</td>
+												<td>
+													<div id="box-2"><b>B.</b>Cabeza,Tronco y Extremidades</div>
+												</td>
+											</tr>
+											<tr align="center">
+												<td>
+													<div id="box-3"><b>C.</b>Cuerpo,Piernas y Brazos</div>
+												</td>
+												<td>
+													<div id="box-4"><b>D.</b>Pelo,Mano y Brazos</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3" style="max-width: 650px;">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<br><br>
+									<h6 ><b>2.</b>¿Como se llama el Poligono de tres lados?</h6>
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<table align="center">
+											<tr align="center">
+												<td>
+													<div id="box-5"><b>A.</b>Triángulo</div>
+												</td>
+												<td>
+													<div id="box-6"><b>B.</b>Cubo</div>
+												</td>
+											</tr>
+											<tr align="center">
+												<td>
+													<div id="box-7"><b>C.</b>Paralelogramo</div>
+												</td>
+												<td>
+													<div id="box-8"><b>D.</b>Circulo</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3" style="max-width: 650px;">
+							<div class="row g-0">
+								<div class="col-md-4">
+									<br><br>
+									<h6 ><b>3.</b>¿Cuales son las cuatro estaciones del año?</h6>
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<table align="center">
+											<tr align="center">
+												<td>
+													<div id="box-9"><b>A.</b>Verano, Invierno, Soleado</div>
+												</td>
+												<td>
+													<div id="box-10"><b>B.</b>Viento, Lluvia, Calor</div>
+												</td>
+											</tr>
+											<tr align="center">
+												<td>
+													<div id="box-11"><b>C.</b>Invierno, Otoño, Pri,mavera</div>
+												</td>
+												<td>
+													<div id="box-12"><b>D.</b>Primavera, Verano, Otoño, Invierno</div>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>  
+					<h3>4. Capital de cierto pais</h3>  
+					<div> 
+						<table align="center" class="table table-dark table-striped">
+							<tr align="center">
+								<td>
+									<b><i>PAIS</i></b> 
+								</td>
+								<td>
+									<b><i>CAPITAL</i></b>
+								</td>
+							</tr>
+							<tbody class="table-group-divider">
+							<tr align="center">
+								<td>
+									<button id="button1" class="ui-state-default ui-corner-all">Paraguay</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect0" class="ui-widget-content ui-corner-all">
+											Quito
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button2" class="ui-state-default ui-corner-all">Venezuela</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect7" class="ui-widget-content ui-corner-all">
+											Sucre y la Paz
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button3" class="ui-state-default ui-corner-all">Colombia</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect2" class="ui-widget-content ui-corner-all">
+											Caracas
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button4" class="ui-state-default ui-corner-all">Peru</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect8" class="ui-widget-content ui-corner-all">
+											Buenos Aires
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button5" class="ui-state-default ui-corner-all">Uruguay</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect6" class="ui-widget-content ui-corner-all">
+											Brasilia
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button6" class="ui-state-default ui-corner-all">Brasil</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect9" class="ui-widget-content ui-corner-all">
+											Santiago de Chile
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button7" class="ui-state-default ui-corner-all">Bolivia</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect5" class="ui-widget-content ui-corner-all">
+											Montevideo
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button8" class="ui-state-default ui-corner-all">Argentina</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect3" class="ui-widget-content ui-corner-all">
+											Bogota
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button9" class="ui-state-default ui-corner-all">Chile</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect4" class="ui-widget-content ui-corner-all">
+											Lima
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr align="center">
+								<td>
+									<button id="button0" class="ui-state-default ui-corner-all">Ecuador</button>
+								</td>
+								<td>
+									<div class="toggler">
+										<div id="effect1" class="ui-widget-content ui-corner-all">
+											Asunción
+										</div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>  
+				</div>
+				<table align="center">
+					<br>
+					<td>
+						<button class="btn btn-success border-white" type="button" onclick="reiniciar()" >REINICIAR</button> 
+					</td>
+				</table>
+			</div>
+		</div>
+	</div>               	
+</body>
+</html>
